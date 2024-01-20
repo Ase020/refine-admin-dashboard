@@ -6,7 +6,6 @@ export const Home = () => {
     <div>
       <Row
         style={{
-          border: "1px solid blue",
           marginTop: "32px",
         }}
         gutter={[32, 32]}
@@ -17,7 +16,6 @@ export const Home = () => {
           xl={8}
           style={{
             height: "460px",
-            border: "1px solid red",
           }}
         >
           <UpcomingEvents />
@@ -29,7 +27,6 @@ export const Home = () => {
           xl={8}
           style={{
             height: "460px",
-            border: "1px solid red",
           }}
         >
           <DealsChart />
