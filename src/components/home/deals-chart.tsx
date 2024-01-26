@@ -22,9 +22,6 @@ const DealsChart = () => {
     return mapDealsData(data?.data);
   }, [data?.data]);
 
-  // console.log("Data: ", data);
-  // console.log("Deal Data: ", dealData);
-
   const config: AreaConfig = {
     data: dealData,
     xField: "timeText",
