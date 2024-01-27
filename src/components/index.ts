@@ -11,6 +11,11 @@ import ProjectCardSkeleton from "./skeletons/project-card";
 
 import { ContactStatusTag } from "./tags/contact-status-tag";
 
+import { KanbanBoardContainer } from "./tasks/kanban/board";
+import { KanbanBoard } from "./tasks/kanban/board";
+import { KanbanColumn } from "./tasks/kanban/column";
+import { KanbanItem } from "./tasks/kanban/item";
+
 import SelectOptionWithAvatar from "./select-option-with-avatar";
 import CustomAvatar from "./custom-avatar";
 import { Text } from "./text";
@@ -29,4 +34,8 @@ export {
   CustomAvatar,
   Text,
   ContactStatusTag,
+  KanbanBoard,
+  KanbanBoardContainer,
+  KanbanColumn,
+  KanbanItem,
 };

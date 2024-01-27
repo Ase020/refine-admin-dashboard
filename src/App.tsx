@@ -21,6 +21,7 @@ import {
   CompanyList,
   Create,
   EditPage,
+  List,
 } from "./pages";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
@@ -67,6 +68,10 @@ function App() {
                     <Route index element={<CompanyList />} />
                     <Route path="new" element={<Create />} />
                     <Route path="edit/:id" element={<EditPage />} />
+                  </Route>
+
+                  <Route path="/tasks">
+                    <Route index element={<List />} />
                   </Route>
                 </Route>
               </Routes>
