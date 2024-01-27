@@ -9,12 +9,12 @@ import { getNameInitials } from "@/utilities";
 import { UPDATE_USER_MUTATION } from "@/graphql/mutations";
 
 import { Text } from "../text";
-import CustomAvatar from "../custom-avatar";
 
 import {
   UpdateUserMutation,
   UpdateUserMutationVariables,
 } from "@/graphql/types";
+import CustomAvatar from "../custom-avatar";
 
 type Props = {
   opened: boolean;

@@ -10,6 +10,8 @@ import LatestActivitiesSkeleton from "./skeletons/latest-activities";
 import ProjectCardSkeleton from "./skeletons/project-card";
 
 import SelectOptionWithAvatar from "./select-option-with-avatar";
+import CustomAvatar from "./custom-avatar";
+import { Text } from "./text";
 
 export {
   UpcomingEvents,
@@ -22,4 +24,6 @@ export {
   LatestActivitiesSkeleton,
   ProjectCardSkeleton,
   SelectOptionWithAvatar,
+  CustomAvatar,
+  Text,
 };
