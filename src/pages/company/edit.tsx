@@ -11,6 +11,7 @@ import { getNameInitials } from "@/utilities";
 import { Edit, useForm, useSelect } from "@refinedev/antd";
 import { GetFieldsFromList } from "@refinedev/nestjs-query";
 import { Col, Form, Input, InputNumber, Row, Select } from "antd";
+import { CompanyContactsTable } from "./contacts-table";
 
 export const EditPage = () => {
   const { saveButtonProps, formProps, formLoading, queryResult } = useForm({
@@ -104,6 +105,10 @@ export const EditPage = () => {
               </Form.Item>
             </Form>
           </Edit>
+        </Col>
+
+        <Col xs={24} xl={12}>
+          <CompanyContactsTable />
         </Col>
       </Row>
     </div>

@@ -9,6 +9,8 @@ import KanbanColumnSkeleton from "./skeletons/kanban";
 import LatestActivitiesSkeleton from "./skeletons/latest-activities";
 import ProjectCardSkeleton from "./skeletons/project-card";
 
+import { ContactStatusTag } from "./tags/contact-status-tag";
+
 import SelectOptionWithAvatar from "./select-option-with-avatar";
 import CustomAvatar from "./custom-avatar";
 import { Text } from "./text";
@@ -26,4 +28,5 @@ export {
   SelectOptionWithAvatar,
   CustomAvatar,
   Text,
+  ContactStatusTag,
 };
