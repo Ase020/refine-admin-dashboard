@@ -20,17 +20,18 @@ import { KanbanAddCardButton } from "./tasks/kanban/add-card-button";
 import SelectOptionWithAvatar from "./select-option-with-avatar";
 import CustomAvatar from "./custom-avatar";
 import { Text } from "./text";
+import { Accordion } from "./accordion";
 
 export {
   UpcomingEvents,
   DealsChart,
-  DashboardTotalCountCard,
-  LatestActivities,
   UpcomingEventsSkeleton,
   AccordionHeaderSkeleton,
   KanbanColumnSkeleton,
-  LatestActivitiesSkeleton,
   ProjectCardSkeleton,
+  LatestActivitiesSkeleton,
+  DashboardTotalCountCard,
+  LatestActivities,
   SelectOptionWithAvatar,
   CustomAvatar,
   Text,
@@ -40,4 +41,15 @@ export {
   KanbanColumn,
   KanbanItem,
   KanbanAddCardButton,
+  Accordion,
 };
+
+export * from "./tags/user-tag";
+export * from "./text";
+export * from "./accordion";
+export * from "./tasks/form/description";
+export * from "./tasks/form/due-date";
+export * from "./tasks/form/stage";
+export * from "./tasks/form/title";
+export * from "./tasks/form/users";
+export * from "./tasks/form/header";
