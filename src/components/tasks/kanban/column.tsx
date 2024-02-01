@@ -27,7 +27,7 @@ export const KanbanColumn = ({
   });
 
   const onAddClickHandler = () => {
-    onAddClick({ id });
+    onAddClick?.({ id });
   };
 
   return (
