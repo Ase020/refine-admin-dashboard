@@ -15,6 +15,7 @@ import { KanbanBoardContainer } from "./tasks/kanban/board";
 import { KanbanBoard } from "./tasks/kanban/board";
 import { KanbanColumn } from "./tasks/kanban/column";
 import { KanbanItem } from "./tasks/kanban/item";
+import { KanbanAddCardButton } from "./tasks/kanban/add-card-button";
 
 import SelectOptionWithAvatar from "./select-option-with-avatar";
 import CustomAvatar from "./custom-avatar";
@@ -38,4 +39,5 @@ export {
   KanbanBoardContainer,
   KanbanColumn,
   KanbanItem,
+  KanbanAddCardButton,
 };

@@ -1,3 +1,4 @@
+import CustomAvatar from "@/components/custom-avatar";
 import { Text } from "@/components/text";
 import { TextIcon } from "@/components/text-icon";
 import { User } from "@/graphql/schema.types";
@@ -14,11 +15,13 @@ import {
   ConfigProvider,
   Dropdown,
   MenuProps,
+  Space,
   Tag,
+  Tooltip,
   theme,
 } from "antd";
 import dayjs from "dayjs";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 
 type ProjectCardProps = {
   id: string;
@@ -138,8 +141,39 @@ export const ProjectCard = ({
               {dueDateOptions.text}
             </Tag>
           )}
+
+          {!!users?.length && (
+            <Space
+              size={4}
+              wrap
+              direction="horizontal"
+              align="center"
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginLeft: "auto",
+                marginRight: 0,
+              }}
+            >
+              {users.map((user) => (
+                <Tooltip key={user.id} title={user.name}>
+                  <CustomAvatar name={user.name} src={user.avatarUrl} />
+                </Tooltip>
+              ))}
+            </Space>
+          )}
         </div>
       </Card>
     </ConfigProvider>
   );
 };
+
+export const ProjectCardMemo = memo(ProjectCard, (prev, next) => {
+  return (
+    prev.id === next.id &&
+    prev.title === next.title &&
+    prev.dueDate === next.dueDate &&
+    prev.users?.length === next.users?.length &&
+    prev.updatedAt === next.updatedAt
+  );
+});
