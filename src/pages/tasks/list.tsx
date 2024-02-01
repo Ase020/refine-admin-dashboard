@@ -4,13 +4,16 @@ import {
   KanbanColumn,
   KanbanItem,
 } from "@/components";
+import { ProjectCard } from "@/components/tasks/kanban/card";
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
 import { TaskStage } from "@/graphql/schema.types";
+import { TasksQuery } from "@/graphql/types";
 import { useList } from "@refinedev/core";
+import { GetFieldsFromList } from "@refinedev/nestjs-query";
 import { useMemo } from "react";
 
 export const List = () => {
-  const { data: stages, isLoading: isLoadingStages } = useList({
+  const { data: stages, isLoading: isLoadingStages } = useList<TaskStage>({
     resource: "taskStages",
     filters: [
       {
@@ -30,7 +33,9 @@ export const List = () => {
     },
   });
 
-  const { data: tasks, isLoading: isLoadingTasks } = useList({
+  const { data: tasks, isLoading: isLoadingTasks } = useList<
+    GetFieldsFromList<TasksQuery>
+  >({
     resource: "tasks",
     sorters: [
       {
@@ -81,7 +86,17 @@ export const List = () => {
             title="unassigned"
             count={taskStages.unassignedStage.length || 0}
             onAddClick={() => handleAddCard({ stageId: "unassigned" })}
-          ></KanbanColumn>
+          >
+            {taskStages.unassignedStage.map((task) => (
+              <KanbanItem
+                key={task.id}
+                id={task.id}
+                data={{ ...task, stageId: "unassigned" }}
+              >
+                <ProjectCard {...task} dueDate={task.dueDate || undefined} />
+              </KanbanItem>
+            ))}
+          </KanbanColumn>
         </KanbanBoard>
       </KanbanBoardContainer>
     </>
